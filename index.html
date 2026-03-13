@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>虾先生 | 严选食材，匠心烹制</title>
+<style>
+:root {
+    --primary-red: #b32d2e;
+    --soft-white: #fafafa;
+    --deep-gray: #1a1a1a;
+    --line-color: #e5e5e5;
+}
+body {
+    margin:0;
+    background-color: var(--soft-white);
+    color: var(--deep-gray);
+    font-family: "PingFang SC","Hiragino Sans GB",sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* 导航栏：居中 logo */
+nav {
+    padding: 20px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom:1px solid var(--line-color);
+    position: sticky;
+    top:0;
+    background-color: var(--soft-white);
+    z-index:1000;
+}
+nav img { height:60px; }
+
+/* 巨幕标题 */
+.hero-section { padding:100px 60px; text-align:center; border-bottom:1px solid var(--line-color);}
+.hero-section h1 { font-size:clamp(32px,5vw,48px); margin:0; font-weight:300;}
+.hero-section span { color:var(--primary-red); font-style:italic; }
+
+/* 内容列表 */
+.menu-container { max-width:1400px; margin:0 auto; }
+.product-block { 
+    display:grid; 
+    grid-template-columns:1fr 1fr; 
+    min-height:70vh; 
+    border-bottom:1px solid var(--line-color);
+    transition: transform 0.3s ease; 
+}
+.product-block:hover { transform: translateY(-5px); }
+.image-side img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease; }
+.product-block:hover .image-side img { transform: scale(1.05); }
+.text-side { padding:80px; display:flex; flex-direction:column; justify-content:center; transition: transform 0.3s ease; }
+.product-block:hover .text-side { transform: translateY(-5px); }
+.index-num { font-size:12px; color:var(--primary-red); margin-bottom:20px;}
+.text-side h2 { font-size:32px; margin:0 0 30px 0; letter-spacing:2px;}
+.description { font-size:16px; line-height:2; color:#555;}
+.origin-badge { font-size:12px; color:#888; padding:15px 0; border-top:1px solid #eee; }
+
+/* 底部 */
+footer { 
+    padding:60px 20px; 
+    text-align:center; 
+    border-top:1px solid var(--line-color); 
+    background-color:#fff;
+}
+footer img { width:150px; height:150px; margin-bottom:15px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1);}
+.add-friend { font-size:16px; color: var(--deep-gray); margin-bottom:10px; font-weight:500;}
+.copy { font-size:12px; color:#bbb; text-transform:uppercase; letter-spacing:2px; }
+
+/* 移动端 */
+@media (max-width:900px){
+    nav { padding: 20px; }
+    .product-block { grid-template-columns:1fr; }
+    .text-side { padding:40px 20px; }
+    .hero-section { padding:60px 20px; }
+    footer img { width:120px; height:120px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <img src="/images/xiaxianshang_logo.png" alt="虾先生 MR.SHRIMP">
+</nav>
+
+<div class="hero-section">
+    <h1>从湖区到深夜的 <span>最短路径</span><br>拒绝工业调料，回归原始鲜甜</h1>
+</div>
+
+<div class="menu-container" id="menu">
+
+    <!-- 01 麻辣 -->
+    <div class="product-block">
+        <div class="image-side"><img src="/images/ma_la.jpg" alt="经典油焖麻辣"></div>
+        <div class="text-side">
+            <div class="index-num">01 / STIR-FRIED SPICY</div>
+            <h2>经典油焖麻辣</h2>
+            <p class="description">潜江口味经典麻辣。高温焖煮，重油重辣，肉质弹爽。</p>
+            <div class="origin-badge">湖北潜江 · 完整保留鲜甜</div>
+        </div>
+    </div>
+
+    <!-- 02 十三香 -->
+    <div class="product-block" style="direction: rtl;">
+        <div class="image-side"><img src="/images/shi_san_xiang.jpg" alt="苏式十三香"></div>
+        <div class="text-side" style="direction: ltr;">
+            <div class="index-num">02 / 13-HERB SPICES</div>
+            <h2>苏式十三香</h2>
+            <p class="description">江苏盱眙传统十三香调配，香气复合，微辣回甘。</p>
+            <div class="origin-badge">江苏盱眙 · 地道十三香</div>
+        </div>
+    </div>
+
+    <!-- 03 金蒜 -->
+    <div class="product-block">
+        <div class="image-side"><img src="/images/jin_suan.jpg" alt="金蒜浓情"></div>
+        <div class="text-side">
+            <div class="index-num">03 / GARLIC FLAVOR</div>
+            <h2>金蒜浓情</h2>
+            <p class="description">大蒜鲜剁提香，蒜香浓郁但不抢鲜味。</p>
+            <div class="origin-badge">手工去线 · 原汁原味</div>
+        </div>
+    </div>
+
+    <!-- 04 冰镇 -->
+    <div class="product-block" style="direction: rtl;">
+        <div class="image-side"><img src="/images/bing_zhen.jpg" alt="陈酿熟醉冰镇"></div>
+        <div class="text-side" style="direction: ltr;">
+            <div class="index-num">04 / CHILLED INFUSION</div>
+            <h2>陈酿熟醉冰镇</h2>
+            <p class="description">清爽冰镇，绍兴花雕与话梅调配冷卤入味。</p>
+            <div class="origin-badge">特级大虾 · 冷卤风味</div>
+        </div>
+    </div>
+
+    <!-- 05 香辣椒盐 -->
+    <div class="product-block">
+        <div class="image-side"><img src="/images/xiang_la.jpg" alt="香辣椒盐"></div>
+        <div class="text-side">
+            <div class="index-num">05 / SPICY SALT</div>
+            <h2>香辣椒盐</h2>
+            <p class="description">辣椒与椒盐结合，外脆内嫩，香辣无比。</p>
+            <div class="origin-badge">风味独特 · 夜市爆款</div>
+        </div>
+    </div>
+
+    <!-- 06 蒜蓉蒸虾 -->
+    <div class="product-block" style="direction: rtl;">
+        <div class="image-side"><img src="/images/suan_rong.jpg" alt="蒜蓉蒸虾"></div>
+        <div class="text-side" style="direction: ltr;">
+            <div class="index-num">06 / STEAMED GARLIC</div>
+            <h2>蒜蓉蒸虾</h2>
+            <p class="description">保留蒜香清甜与虾肉鲜味，清蒸更健康。</p>
+            <div class="origin-badge">鲜蒜入味 · 清爽不腻</div>
+        </div>
+    </div>
+
+    <!-- 07 柠檬胡椒 -->
+    <div class="product-block">
+        <div class="image-side"><img src="/images/ning_meng.jpg" alt="柠檬胡椒"></div>
+        <div class="text-side">
+            <div class="index-num">07 / LEMON PEPPER</div>
+            <h2>柠檬胡椒</h2>
+            <p class="description">柠檬酸爽 + 胡椒微辣，清新开胃。</p>
+            <div class="origin-badge">夏日清爽 · 清新鲜甜</div>
+        </div>
+    </div>
+
+    <!-- 08 香草奶油 -->
+    <div class="product-block" style="direction: rtl;">
+        <div class="image-side"><img src="/images/xiang_cao.jpg" alt="香草奶油"></div>
+        <div class="text-side" style="direction: ltr;">
+            <div class="index-num">08 / HERB CREAM</div>
+            <h2>香草奶油</h2>
+            <p class="description">奶油与香草调制，浓郁香甜，新颖风味。</p>
+            <div class="origin-badge">创意风味 · 甜辣适中</div>
+        </div>
+    </div>
+
+    <!-- 09 芥末虾 -->
+    <div class="product-block">
+        <div class="image-side"><img src="/images/jie_mo.jpg" alt="芥末虾"></div>
+        <div class="text-side">
+            <div class="index-num">09 / WASABI FLAVOR</div>
+            <h2>芥末虾</h2>
+            <p class="description">芥末香气刺激，微辣提神，与虾肉鲜甜完美融合。</p>
+            <div class="origin-badge">创意口味 · 新奇体验</div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <div class="add-friend">长按二维码添加微信好友，获取最新小龙虾优惠</div>
+    <img src="/images/wechat_qr.png" alt="微信二维码">
+    <div class="copy">© 2026 虾先生 版权所有</div>
+</footer>
+
+</body>
+</html>
